@@ -4,6 +4,7 @@
     "zuul-service": "https://github.com/1810-oct08-java-usf/zuul-service",
     "config-service": "https://github.com/1810-oct08-java-usf/config-service",
     "auth-service": "https://github.com/1810-oct08-java-usf/auth-service",
-    "project-service": "https://github.com/1810-oct08-java-usf/project-service"
+    "project-service": "https://github.com/1810-oct08-java-usf/project-service",
+    "configuration-repo": "https://github.com/1810-oct08-java-usf/configuration-repo"
   }
 }
