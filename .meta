@@ -1,10 +1,10 @@
 {
   "projects": {
-    "eureka-service": "https://github.com/1810-oct08-java-usf/eureka-service",
-    "zuul-service": "https://github.com/1810-oct08-java-usf/zuul-service",
-    "config-service": "https://github.com/1810-oct08-java-usf/config-service",
-    "auth-service": "https://github.com/1810-oct08-java-usf/auth-service",
-    "project-service": "https://github.com/1810-oct08-java-usf/project-service",
-    "configuration-repo": "https://github.com/1810-oct08-java-usf/configuration-repo"
+    "eureka-service": "https://github.com/Revature-RPM/eureka-service",
+    "zuul-service": "https://github.com/Revature-RPM/zuul-service",
+    "config-service": "https://github.com/Revature-RPM/config-service",
+    "auth-service": "https://github.com/Revature-RPM/auth-service",
+    "project-service": "https://github.com/Revature-RPM/project-service",
+    "configuration-repo": "https://github.com/Revature-RPM/configuration-repo"
   }
 }
