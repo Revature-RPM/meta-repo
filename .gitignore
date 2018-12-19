@@ -4,6 +4,7 @@ auth-service
 eureka-service
 config-service
 zuul-service
+configuration-repo
 
 /.metadata/
 
