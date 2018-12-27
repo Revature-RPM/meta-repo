@@ -4,6 +4,7 @@
     "zuul-service": "https://github.com/Revature-RPM/zuul-service",
     "config-service": "https://github.com/Revature-RPM/config-service",
     "auth-service": "https://github.com/Revature-RPM/auth-service",
+	"user-service": "https://github.com/Revature-RPM/user-service",
     "project-service": "https://github.com/Revature-RPM/project-service",
     "configuration-repo": "https://github.com/Revature-RPM/configuration-repo"
   }
