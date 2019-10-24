@@ -5,6 +5,7 @@
     "config-service": "https://github.com/Revature-RPM/config-service",
     "auth-service": "https://github.com/Revature-RPM/auth-service",
     "project-service": "https://github.com/Revature-RPM/project-service",
+    "gateway-service": "https://github.com/Revature-RPM/gateway-service",
     "configuration-repo": "https://github.com/Revature-RPM/configuration-repo"
   }
 }
