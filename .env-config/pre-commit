@@ -1,0 +1,52 @@
+#!/bin/bash 
+# A pre-commit git hook that checks to ensure all committed files conform
+# with Google's Style Guide.
+
+remote="$1"
+origin="$2"
+dep_dir="../.env-config"       # Location to store downloaded files.
+checkstyle_version="8.25"
+checkstyle_jar="$dep_dir/checkstyle-$checkstyle_version-all.jar"
+xml_config="$dep_dir/google_checks.xml"
+java_exe=""
+java_files=()
+msg=""
+
+###############################
+#                             #
+#         Functions           #
+#                             #
+###############################
+
+# Used if a warning should be issued.
+function _warn() {
+  echo -e >&2 "\033[1;33m WARNING: \033[0m $@";
+}
+
+# Used if a error should be issued.
+function _err() {
+  echo -e >&2 "\033[0;31m ERROR: Commit Blocked!\033[0m $@";
+  return 1;
+}
+
+#############################
+#                           #
+#          Start            #
+#                           #
+#############################
+
+# Retrieve all Java that have been staged.
+mapfile -t -d \\  java_files < <(git diff-index --cached HEAD 2>&1 | sed 's/^:.*[[:space:]]//' | grep '.java');
+
+for file in ${java_files[@]}; do
+  echo "Checking $file...";
+  msg="$msg""$( java -jar $checkstyle_jar -c ${xml_config} $file 2>&1 | grep --color=always 'WARN' )";
+done
+if [[ ! -z "${msg// }" ]]; then
+  echo "$msg";
+  git reset --mixed;    # The default action is "mixed" (i.e. the index is reset but not the working tree) but wanted to be explicit.
+  _err "The file(s) you are trying to commit do not abide by Google's Java Style Guide. Please fix the errors from above and recommit. For a complete reference see https://google.github.io/styleguide/javaguide.html";
+  exit 1
+fi
+echo -e >&2 "\033[0;32m Style Check PASSED! \033[0m";
+exit 0;

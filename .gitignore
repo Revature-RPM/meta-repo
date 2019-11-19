@@ -104,3 +104,7 @@ hibernate.cfg.xml
 
 # sonarlint modules
 .sonarlint
+
+# Ignore Checkstyle and Google formatter JARs
+!google-java-format-1.7-all-deps.jar
+!checkstyle-8.25-all.jar
